@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import {
     Welcome,
@@ -10,6 +11,7 @@ import {
     ForgotPassword,
     Otp
 } from "./screens";
+import HomeScreen from "./src/screens/HomeScreen";
 
 const Stack = createStackNavigator();
 
@@ -27,14 +29,30 @@ const App = () => {
         return null;
     }
 
-    const AuthScrenns = () => {
+    function Home() {
+        return (
+
+            <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+            initialRouteName={'Home'}
+        >
+            <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
+        );
+      }
+      
+
+    const AuthScreens = () => {
         return (
             <Stack.Navigator
                 screenOptions={{
                     headerShown: false
                 }}
-                initialRouteName={'Welcome'}
+                initialRouteName={'Home'}
             >
+                <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Walkthrough" component={Walkthrough} />
 
@@ -44,12 +62,10 @@ const App = () => {
             </Stack.Navigator>
         )
     }
-
     
     return (
         <NavigationContainer>
-            {AuthScrenns()}
-            
+            {AuthScreens()}
         </NavigationContainer>
     )
 }
