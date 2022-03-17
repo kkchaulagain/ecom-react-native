@@ -3,6 +3,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+const Tab = createMaterialBottomTabNavigator();
+
+
 
 import {
     Welcome,
@@ -12,6 +16,7 @@ import {
     Otp
 } from "./screens";
 import HomeScreen from "./src/screens/HomeScreen";
+import ProductDetailScreen from "./src/screens/ProductDetailScreen";
 
 const Stack = createStackNavigator();
 
@@ -28,21 +33,8 @@ const App = () => {
     if (!loaded) {
         return null;
     }
+    const isLoggedIn = true;
 
-    function Home() {
-        return (
-
-            <Stack.Navigator
-            screenOptions={{
-                headerShown: false
-            }}
-            initialRouteName={'Home'}
-        >
-            <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-        );
-      }
-      
 
     const AuthScreens = () => {
         return (
@@ -50,9 +42,8 @@ const App = () => {
                 screenOptions={{
                     headerShown: false
                 }}
-                initialRouteName={'Home'}
+                initialRouteName={'Walkthrough'}
             >
-                <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Walkthrough" component={Walkthrough} />
 
@@ -62,10 +53,24 @@ const App = () => {
             </Stack.Navigator>
         )
     }
-    
+
+    function mainScreens() {
+        return (
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false
+                }}
+                initialRouteName={'Home'}
+            >
+                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+            </Stack.Navigator>
+
+        );
+    }
     return (
         <NavigationContainer>
-            {AuthScreens()}
+            {!isLoggedIn ? AuthScreens() : mainScreens()}
         </NavigationContainer>
     )
 }
