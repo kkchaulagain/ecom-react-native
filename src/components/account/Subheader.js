@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { COLORS } from '../../../constants';
 
 const Subheader = () => {
     return <View style={styles.container} >
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
         margin: 15,
         borderRadius:30,
         justifyContent: "center",
-        backgroundColor: "#00b894",
+        backgroundColor: COLORS.primary,
         shadowColor: '#ddd',
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.8,

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text,TouchableOpacity } from 'react-native';
+import { COLORS, FONTS, SIZES } from '../../../constants';
 
 const FilterComponent = ({ name, state,onPressFilter }) => {
     return (
@@ -17,8 +18,8 @@ const styles = StyleSheet.create({
     Layout: {
         width: 100,
         height: 50,
-        borderColor: "#fff",
-        backgroundColor: "#fff",
+        borderColor: COLORS.light,
+        backgroundColor: COLORS.light,
         borderWidth: 2,
         justifyContent: "space-evenly",
         borderRadius: 30
@@ -26,16 +27,16 @@ const styles = StyleSheet.create({
     activeLayout: {
         width: 100,
         height: 50,
-        borderColor: "#F39A2D",
-        backgroundColor: "#F39A2D",
+        borderColor: COLORS.primary,
+        backgroundColor:COLORS.primary,
         borderWidth: 2,
         justifyContent: "space-evenly",
         borderRadius: 30
     },
     activetextStyle: {
         textAlign: "center",
-        fontSize: 22,
-        letterSpacing:1.5,
+        fontSize: FONTS.body2.fontSize,
+        letterSpacing:FONTS.body2.letterSpacing,
         fontWeight: "600",
         color: "white"
     },

@@ -85,6 +85,7 @@ export const SIZES = {
     font: 14,
     radius: 12,
     padding: 24,
+    margin: 10,
 
     // font sizes
     largeTitle: 40,
@@ -101,7 +102,9 @@ export const SIZES = {
 
     // app dimensions
     width,
-    height
+    height,
+    headerHeight: height * 0.1,
+    bottomTabHeight: height * 0.08,
 };
 
 export const FONTS = {

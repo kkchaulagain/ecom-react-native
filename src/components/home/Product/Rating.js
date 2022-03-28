@@ -1,6 +1,7 @@
 import React from 'react';
 import {  StyleSheet } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons'
+import { COLORS } from '../../../../constants';
 const Rating = ({active}) => {
 
   return (
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
     fontSize:14,
     marginHorizontal:2,
     alignSelf:"center",
-    color:"#2ecc71"
+    color:COLORS.primary80
   },
   starinactiveiconStyle:{
     fontSize:14,

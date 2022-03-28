@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text,Image,TouchableOpacity } from 'react-native';
+import { COLORS } from '../../../../constants';
 import Rating from './Rating';
 
 const ProductList = ({ product,onProductPress }) => {
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: 'bold',
     flex:1,
-    color:'#F39A2D'
+    color:COLORS.primary80
   },
   productName:{
     fontSize:18,

@@ -3,6 +3,7 @@ import { View, FlatList, StyleSheet,Text } from 'react-native';
 // import {  } from 'react-native-elements';
 import {FontAwesome} from '@expo/vector-icons'
 import Product from './products';
+import { COLORS } from '../../../../constants';
 
 const ProductList = ({ name, products, onProductPressed }) => {
 
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   iconstyle:{
     fontSize:20,
     marginHorizontal:2,
-    color:'#2ecc71'
+    color:COLORS.secondary
   }
 });
 

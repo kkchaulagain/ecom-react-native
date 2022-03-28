@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { COLORS, SIZES } from '../../../constants';
 
 const Header = ({name}) => {
     return (
@@ -11,8 +12,8 @@ const Header = ({name}) => {
 
 const styles = StyleSheet.create({
     container:{
-        height:80,
-        backgroundColor:"#27ae60",
+        height:SIZES.headerHeight,
+        backgroundColor:COLORS.primary,
         justifyContent:"flex-end",
         marginBottom:3
     },

@@ -30,7 +30,7 @@ const  HomeScreen = ({ navigation }) => {
 
       <ScrollView>
         <Category />
-        <Filter />
+        {/* <Filter /> */}
         <ProductList onProductPressed={(id) => { navigation.navigate('ProductDetail')}} products={products} name="Sports" />
         <ProductList onProductPressed={(id) => { navigation.navigate('ProductDetail')}} products={products} name="Casual Wear" />
         <Spacer />

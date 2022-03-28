@@ -2,11 +2,10 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {SIZES,COLORS} from './constants';
 const Tab = createMaterialBottomTabNavigator();
-
-
 
 import {
     Welcome,
@@ -17,6 +16,8 @@ import {
 } from "./screens";
 import HomeScreen from "./src/screens/HomeScreen";
 import ProductDetailScreen from "./src/screens/ProductDetailScreen";
+import { BottomNavigation } from "react-native-paper";
+import AccountScreen from "./src/screens/AccountScreen";
 
 const Stack = createStackNavigator();
 
@@ -54,7 +55,8 @@ const App = () => {
         )
     }
 
-    function mainScreens() {
+
+    function HomeTab() {
         return (
             <Stack.Navigator
                 screenOptions={{
@@ -65,8 +67,63 @@ const App = () => {
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
             </Stack.Navigator>
+        )
+    }
 
+    function AccountTab() {
+        return (
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false
+                }}
+                initialRouteName={'Account'}
+            >
+                <Stack.Screen name="Account" component={AccountScreen} />
+            </Stack.Navigator>
+        )
+    }
+
+    function MainFlow() {
+        return (
+          <Tab.Navigator  initialRouteName="Home"
+          activeColor="#fff"
+          barStyle={{ backgroundColor: COLORS.primary,height:SIZES.bottomTabHeight
+          }}>
+            <Tab.Screen name="Home"  options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }} component={HomeTab} />
+             <Tab.Screen
+        name="Profile"
+        component={AccountTab}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
+        }}
+      />
+          </Tab.Navigator>
         );
+      }
+
+    function mainScreens() {
+      // bottom tab navigator
+        
+      return (
+        <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={MainFlow}
+          options={{ headerShown: false }}
+        />
+        {/* <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Settings" component={Settings} /> */}
+      </Stack.Navigator>
+
+      );
     }
     return (
         <NavigationContainer>

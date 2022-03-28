@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
+import {COLORS,FONTS,SIZES} from '../../../constants';
 
 const SingleCategory = ({ image, state, name,onPressProduct }) => {
     return (
@@ -20,17 +21,17 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: "center",
-        marginTop: 10,
-        fontWeight: '600',
-        fontSize: 17
+        marginTop: SIZES.margin,
+        fontSize: FONTS.body4.fontSize,
+        fontFamily: FONTS.body4.fontFamily,
+        color: COLORS.backgroundColor
     },
     activetext: {
         textAlign: "center",
         marginTop: 10,
-        fontWeight: '600',
-        color: '#F39A2D',
-        fontSize: 17,
-        letterSpacing:1.1
+        color: COLORS.primary,
+        fontSize: FONTS.body3.fontSize,
+        fontFamily: FONTS.body3.fontFamily,
     },
     productImage: {
         width: 40,
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 35,
-        backgroundColor: '#F39A2D'
+        backgroundColor: COLORS.primary,
     }
 });
 
