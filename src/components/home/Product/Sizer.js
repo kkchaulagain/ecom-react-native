@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLORS } from '../../../../constants';
 
 const Size = ({ size, active, onSizeChange }) => {
     return (
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     activeContainer: {
-        backgroundColor: "#F39A2D",
+        backgroundColor: COLORS.primary,
 
         width: 50,
         height: 50,

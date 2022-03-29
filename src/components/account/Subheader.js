@@ -18,11 +18,11 @@ const Subheader = () => {
 
 const styles = StyleSheet.create({
     container: {
-        height: 200,
+        height: 150,
         margin: 15,
         borderRadius:30,
         justifyContent: "center",
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.light,
         shadowColor: '#ddd',
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.8,
@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
         fontSize:18,
         marginTop:5,
         fontWeight:"600",
-        color:"#fff"
+        color:COLORS.dark
     },
     email:{
         textAlign:"center",
         fontSize:14,
         fontWeight:"600",
-        color:"#fff"
+        color:COLORS.dark
     },
     avatar: {
         width: 60,

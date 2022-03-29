@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import {FontAwesome} from '@expo/vector-icons'
+import { COLORS } from '../../../constants';
 const Action = () => {
     return (
         <View style={styles.container}>
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     TextStyle:{
 
         flex: 1,
-        backgroundColor: "#F39A2D",
+        backgroundColor: COLORS.success,
         marginHorizontal:15,
         borderRadius: 20,
         shadowColor: '#ddd',
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
 
         marginVertical: 10,
         letterSpacing:1.1,
-        color:"#2ecc71",
+        color:COLORS.secondary,
         textAlign:"center"
     },
     buynow:{

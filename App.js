@@ -86,8 +86,10 @@ const App = () => {
     function MainFlow() {
         return (
           <Tab.Navigator  initialRouteName="Home"
-          activeColor="#fff"
-          barStyle={{ backgroundColor: COLORS.primary,height:SIZES.bottomTabHeight
+          activeColor={COLORS.primary}
+          barStyle={{
+               backgroundColor: COLORS.light,
+               height:SIZES.bottomTabHeight
           }}>
             <Tab.Screen name="Home"  options={{
           tabBarLabel: 'Home',

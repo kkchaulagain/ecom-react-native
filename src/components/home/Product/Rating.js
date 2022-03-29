@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     fontSize:14,
     marginHorizontal:2,
     alignSelf:"center",
-    color:COLORS.primary80
+    color:COLORS.success
   },
   starinactiveiconStyle:{
     fontSize:14,

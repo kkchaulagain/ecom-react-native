@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { COLORS } from '../../../../constants';
 import Spacer from '../../Spacer';
 import Sizer from './Sizer';
 
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     },
     selected: {
         marginHorizontal: 5,
-        color: "#2ecc71",
+        color: COLORS.primary,
         fontWeight: "bold",
         letterSpacing:0.8
     },

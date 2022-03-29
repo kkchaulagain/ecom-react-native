@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { COLORS } from '../../../constants';
 import Rating from './../home/Product/Rating';
 
 const Title = ({ product }) => {
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     priceText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#FE6867'
+        color: COLORS.dark
     },
     productName: {
         fontSize: 20,

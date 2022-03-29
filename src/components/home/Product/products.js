@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: 'bold',
     flex:1,
-    color:COLORS.primary80
+    color:COLORS.dark
   },
   productName:{
     fontSize:18,
