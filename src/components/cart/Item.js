@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import Rating from '../home/Product/Rating';
+import { COLORS } from '../../../constants';
 const Item = ({ item }) => {
  
 
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     pricingText: {
         textAlign: "center",
         fontWeight: "600",
-        color: "#27ae60"
+        color: COLORS.dark
     },
     buttonStyle: {
         color: "#e74c3c"

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     View,
     Text,
@@ -12,7 +12,7 @@ import {
 import { MotiView, useAnimationState } from 'moti'
 import { Shadow } from 'react-native-shadow-2';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
+import { Context as AuthContext } from '../../src/context/AuthContext';
 import {
     TextButton,
     IconButton,
@@ -444,6 +444,8 @@ const AuthMain = ({ navigation }) => {
     }
 
     function renderSocialLogins() {
+        const { skipLogin } = useContext(AuthContext);
+
         return (
             <View
                 style={{
@@ -468,7 +470,7 @@ const AuthMain = ({ navigation }) => {
                             tintColor: COLORS.dark
                         }}
                         containerStyle={styles.socialButtonContainer}
-                    //onPress={() => navigation.goBack()}
+                    onPress={skipLogin}
                     />
 
                     <IconButton

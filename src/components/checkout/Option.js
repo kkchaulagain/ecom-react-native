@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLORS } from '../../../constants';
 const Option = ({ title, value, active, onChangeState }) => {
     return (
         <TouchableOpacity
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     },
     addresstitleholder: {
         borderWidth: 1,
-        borderColor: "#27ae60",
+        borderColor: COLORS.primary,
         backgroundColor: "#eee",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     },
     iconBackground: {
         margin: 5,
-        backgroundColor: "#27ae60",
+        backgroundColor: COLORS.primary,
         borderRadius: 40,
         width: 30,
         height: 30,
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     addresstitle: {
         margin: 5,
         fontSize: 10,
-        color: "#27ae60",
+        color: COLORS.dark,
         fontWeight: "bold"
     },
     address: {

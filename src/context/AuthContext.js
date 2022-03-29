@@ -67,9 +67,14 @@ const signout = dispatch => async () => {
   dispatch({ type: 'signout' });
   navigate('loginFlow');
 };
+const skipLogin = dispatch => async () => {
+  // await AsyncStorage.removeItem('token');
+  // dispatch({ type: 'signout' });
+  navigate('Main');
+};
 
 export const { Provider, Context } = createDataContext(
   authReducer,
-  { signin, signout, signup, clearErrorMessage, tryLocalSignin },
+  { signin, signout, signup, clearErrorMessage, tryLocalSignin ,skipLogin},
   { token: null, errorMessage: '' }
 );

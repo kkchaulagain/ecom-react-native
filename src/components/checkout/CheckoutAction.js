@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLORS } from '../../../constants';
 import { navigate } from '../../navigationRef';
 
 const CheckoutAction = ({ onPurchase }) => {
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     },
 
     textHolder: {
-        backgroundColor: "#27ae60",
+        backgroundColor: COLORS.primary,
         borderRadius: 10,
         width: 350,
         flex: 1,
