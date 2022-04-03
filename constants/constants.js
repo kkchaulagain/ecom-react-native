@@ -37,9 +37,14 @@ const walkthrough = [
 
 const homeTabs = ['Product', 'My Cart', 'Service']
 
+const server={
+    url:"http://139.59.75.155"
+}
+
 export default {
     walkthrough_01_01_images,
     walkthrough_01_02_images,
     walkthrough,
-    homeTabs
+    homeTabs,
+    server
 }

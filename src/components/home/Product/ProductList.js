@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, FlatList, StyleSheet,Text } from 'react-native';
+import { View, FlatList, StyleSheet,Text,Image } from 'react-native';
 // import {  } from 'react-native-elements';
 import {FontAwesome} from '@expo/vector-icons'
 import Product from './products';
-import { COLORS } from '../../../../constants';
+import { COLORS, icons } from '../../../../constants';
 
 const ProductList = ({ name, products, onProductPressed }) => {
 
@@ -13,14 +13,18 @@ const ProductList = ({ name, products, onProductPressed }) => {
         <Text style={styles.listtitletext} >{name}</Text>
         <>
         {/* <Text style={styles.iconstyle}></Text> */}
-        <FontAwesome  style={styles.iconstyle} name="caret-right" />
+        <Image 
+        style={styles.iconstyle}
+        source ={icons.arrow_down_fill}
+        />
+        {/* <FontAwesome  style={styles.iconstyle} name="caret-right" /> */}
         </>
       </View>
       <View style={styles.container} >
         <FlatList
           horizontal
           data={products}
-          keyExtractor={result => result.id + 'product'}
+          keyExtractor={result => result._id + 'product'}
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => {
             return (
@@ -48,12 +52,13 @@ const styles = StyleSheet.create({
   listtitletext:{
     fontSize:20,
     fontWeight:"bold",
+    textTransform: 'capitalize',
     flex:1
   },
   iconstyle:{
-    fontSize:20,
-    marginHorizontal:2,
-    color:COLORS.secondary
+    tintColor:COLORS.primary,
+    width:20,
+    height:20
   }
 });
 

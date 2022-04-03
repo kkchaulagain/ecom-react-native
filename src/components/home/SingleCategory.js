@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
-import {COLORS,FONTS,SIZES} from '../../../constants';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { COLORS, FONTS, SIZES } from '../../../constants';
+import { urilize } from '../../utils/helpers/common';
 
-const SingleCategory = ({ image, state, name,onPressProduct }) => {
+const SingleCategory = ({ category, selectedCategory, setSelectedCategory }) => {
+    let { name, _id, image_url } = category;
+    console.log(category);
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => onPressProduct(name)}>
+            <TouchableOpacity onPress={() => { setSelectedCategory(category) }}>
 
-                <Image style={name === state ? styles.activeproductImage : styles.productImage} source={image} />
+                <Image style={selectedCategory&& selectedCategory._id === _id ? styles.activeproductImage : styles.productImage} source={urilize(image_url)} />
 
-                <Text style={name === state ? styles.activetext : styles.text}>{name}</Text>
+                <Text style={selectedCategory&&selectedCategory._id === _id ? styles.activetext : styles.text}>{name}</Text>
             </TouchableOpacity>
         </View>
     );
@@ -24,7 +27,8 @@ const styles = StyleSheet.create({
         marginTop: SIZES.margin,
         fontSize: FONTS.body4.fontSize,
         fontFamily: FONTS.body4.fontFamily,
-        color: COLORS.backgroundColor
+        color: COLORS.dark,
+        textTransform: "capitalize"
     },
     activetext: {
         textAlign: "center",
@@ -32,6 +36,7 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
         fontSize: FONTS.body3.fontSize,
         fontFamily: FONTS.body3.fontFamily,
+        textTransform: "capitalize"
     },
     productImage: {
         width: 40,
