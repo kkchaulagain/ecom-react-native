@@ -4,6 +4,7 @@ import Rating from '../home/Product/Rating';
 import { ProgressBar } from 'react-native-paper';
 import Reviews from './../Review/Reviews'
 import { FlatList } from 'react-native-gesture-handler';
+import { COLORS, FONTS, SIZES } from '../../../constants';
 const Review = ({ product }) => {
     return <View style={styles.container}>
         <View style={styles.contentHolder}>
@@ -70,56 +71,58 @@ const Review = ({ product }) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 15,
-        backgroundColor: "#ecf0f1",
-        shadowColor: '#ddd',
+        marginTop: SIZES.margin,
+        backgroundColor: COLORS.support5_08,
+        shadowColor: COLORS.grey,
         shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
+        // shadowOpacity: 0.8,
+        // shadowRadius: 2,
     },
     contentHolder: {
-        margin: 15,
-        borderBottomColor: "black",
+        margin: SIZES.margin,
+        borderBottomColor: COLORS.grey,
     },
     ratingsubtext: {
-        fontSize: 10,
-        marginLeft: 5,
-        marginTop: 2
+        // fontSize: 15,
+        // marginLeft: 5,
+        // marginTop: 2
     },
     reviewbars: {
         flexDirection: "row",
-        marginVertical: 2
+        marginVertical: SIZES.margin*0.1,
     },
     reviewbar: {
         // flex:1,
-        width: 180,
-        marginTop: 6,
+        width: SIZES.width*0.7,
+        marginTop: SIZES.margin*0.1,
         justifyContent: 'center'
 
     },
     reviewbartext: {
-        width: 80
+        width: SIZES.width*0.2
     },
     mainText: {
-        fontSize: 16,
+        fontSize: FONTS.body4.fontSize,
+        fontFamily: FONTS.body4.fontFamily,
         fontWeight: "bold",
-        letterSpacing: 1.1,
+        letterSpacing: 1.2,
         textAlign: "center"
     },
     ratingContainer: {
-        marginVertical: 20,
+        marginVertical: SIZES.margin*0.8,
     },
     ratingstyle: {
-        marginTop: 20,
+        marginTop: SIZES.margin*0.8,
         flexDirection: "row",
         justifyContent: "center",
     },
     ratingText: {
         textAlign: "center",
-        marginTop: 5
+        marginTop: SIZES.margin*0.8,
     },
     mainRatingText: {
-        fontSize: 32,
+        fontSize: FONTS.h2.fontSize,
+        fontFamily: FONTS.h2.fontFamily,
         fontWeight: "bold",
         letterSpacing: 1.1,
         textAlign: "center"

@@ -8,9 +8,10 @@ export default () => {
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
-    const fetchCategories = async () => {
+    const fetchCategories = () => {
         let response = getCategories();
-        await response.then(res => {
+        
+         response.then(res => {
             setCategories(res);
         })
     }

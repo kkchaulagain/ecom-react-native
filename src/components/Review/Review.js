@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
+import { COLORS, SIZES } from '../../../constants';
 import Rating from '../home/Product/Rating';
 
 const Review = ({ rating }) => {
@@ -28,11 +29,11 @@ const Review = ({ rating }) => {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 5,
-        borderBottomColor:'#95a5a6'
+        marginTop:SIZES.margin,
+        borderBottomColor:COLORS.grey
     },
     descriptiontext: {
-        marginTop:10,
+        marginTop:SIZES.margin,
         letterSpacing:0.8
     },
     reviewheads: {
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     },
     name: {
         fontSize: 10,
-        marginTop: 7,
+        marginTop: SIZES.margin * 0.7,
         fontWeight: "bold"
     },
     nameHolder: {

@@ -3,21 +3,20 @@ import { View, FlatList, StyleSheet,Text,Image } from 'react-native';
 // import {  } from 'react-native-elements';
 import {FontAwesome} from '@expo/vector-icons'
 import Product from './products';
-import { COLORS, icons } from '../../../../constants';
+import { COLORS, icons,FONTS } from '../../../../constants';
 
 const ProductList = ({ name, products, onProductPressed }) => {
 
   return (
     <>
       <View style={styles.listtitle}>
-        <Text style={styles.listtitletext} >{name}</Text>
+        <Text style={{...styles.listtitletext,...FONTS.h2}} >{name}</Text>
         <>
-        {/* <Text style={styles.iconstyle}></Text> */}
+       
         <Image 
         style={styles.iconstyle}
         source ={icons.arrow_down_fill}
         />
-        {/* <FontAwesome  style={styles.iconstyle} name="caret-right" /> */}
         </>
       </View>
       <View style={styles.container} >
@@ -29,7 +28,7 @@ const ProductList = ({ name, products, onProductPressed }) => {
           renderItem={({ item }) => {
             return (
               <Product
-                onProductPress={(id) => onProductPressed(id)}
+                onProductPress={(product) => onProductPressed(product)}
                 product={item}
               />
             )
@@ -50,9 +49,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   listtitletext:{
-    fontSize:20,
-    fontWeight:"bold",
     textTransform: 'capitalize',
+    color: COLORS.primary,
     flex:1
   },
   iconstyle:{

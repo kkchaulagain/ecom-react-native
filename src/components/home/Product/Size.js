@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { COLORS } from '../../../../constants';
+import { COLORS, SIZES } from '../../../../constants';
 import Spacer from '../../Spacer';
 import Sizer from './Sizer';
 
@@ -38,11 +38,11 @@ const Size = ({ sizes }) => {
 const styles = StyleSheet.create({
 
     container: {
-        marginHorizontal: 15,
+        margin: SIZES.margin,
         marginBottom: 10,
-        backgroundColor: "#ecf0f1",
-        borderRadius: 20,
-        shadowColor: '#ddd',
+        backgroundColor:COLORS.support5_08,
+        borderRadius: SIZES.radius,
+        shadowColor: COLORS.grey,
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.8,
         shadowRadius: 2,
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     firstRow: {
         flexDirection: "row",
         fontSize: 16,
-        marginHorizontal: 10,
-        marginVertical: 5
+        marginHorizontal: SIZES.margin,
+        marginVertical: SIZES.margin*0.5
 
     },
     size: {

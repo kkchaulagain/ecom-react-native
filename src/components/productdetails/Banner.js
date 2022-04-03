@@ -1,27 +1,25 @@
 import React from 'react';
 import { View,Image, Text, StyleSheet } from 'react-native';
+import { SIZES } from '../../../constants';
+import { urilize } from '../../utils/helpers/common';
 
 const Banner = ({product}) => {
+    const images = product.images;
+    const imageUrl = urilize(images[0].url);
  
     return <View style={styles.container}>
-        <Image style={styles.productImage} source={product.image} />
+        <Image style={styles.productImage} source={imageUrl} />
 
     </View>;
 };
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 40,
-        marginBottom:5
+        marginTop: SIZES.padding*1.5
     },
     productImage: {
-        width: 379,
-        height: 250,
-        // marginBottom: 10,
-        marginTop:0,
-        margin:0,
-        borderTopLeftRadius: 25,
-        borderTopRightRadius:25
+        width: SIZES.width,
+        height: SIZES.height * 0.4
     }
 });
 

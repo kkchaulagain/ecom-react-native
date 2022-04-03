@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { SIZES } from '../../../constants';
 import Review from './Review';
 
 const Reviews = ({Rating}) => {
@@ -11,7 +12,7 @@ const Reviews = ({Rating}) => {
 
 const styles = StyleSheet.create({
     container:{
-        margin:15,
+        margin:SIZES.margin,
         borderTopColor:"#bdc3c7",
         borderTopWidth:1
     }

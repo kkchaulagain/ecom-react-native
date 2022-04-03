@@ -25,14 +25,14 @@ const HomeScreen = ({ navigation }) => {
         {selectedCategory && selectedCategory.children.map(category => {
           return (
             <ProductList key={category._id} 
-            onProductPressed={(id) => { navigation.navigate('ProductDetail') }}
+            onProductPressed={(product) => { navigation.navigate('ProductDetail',{
+              product:product
+            }) }}
             products={category.products} 
             name={category.name}  />
           )
         })}
-        {/* <ProductList onProductPressed={(id) => { navigation.navigate('ProductDetail') }} products={products} name="Sports" />
-        <ProductList onProductPressed={(id) => { navigation.navigate('ProductDetail') }} products={products} name="Casual Wear" /> */}
-        <Spacer />
+         <Spacer />
       </ScrollView>
       {/* <Button
         title="Go to Track Detail"

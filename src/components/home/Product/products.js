@@ -5,15 +5,18 @@ import { urilize } from '../../../utils/helpers/common';
 import Rating from './Rating';
 
 const ProductList = ({ product, onProductPress }) => {
-  console.log(product.images[0])
   const imageUrl = urilize(product.images[0].url);
-  console.log(imageUrl)
   return (
     <TouchableOpacity
-      onPress={() => onProductPress(product._id)}
+      onPress={() => onProductPress(product)}
     >
       <View style={styles.container}>
-        <Image style={styles.productImage} source={urilize(product.images[0].url)} />
+        {product.price.selling_price<product.price.mrp && (
+      <View style={styles.saleContainer}> 
+          <Text style={styles.salesText}>SALE</Text>
+      </View>
+        )}
+        <Image style={styles.productImage} source={imageUrl} />
         {/* <Spacer /> */}
 
         <Text style={{ ...FONTS.body4, ...styles.productName }} >{product.name} </Text>
@@ -71,6 +74,24 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-end",
   },
+  saleContainer:{
+    backgroundColor:COLORS.support6,
+    padding:SIZES.padding / 4,
+    borderTopEndRadius:SIZES.radius,
+    width:SIZES.width / 6,
+    fontSize:SIZES.base,
+    position:'absolute',
+    top:0,
+    right:0,
+    zIndex:1
+  },
+  salesText:{
+    color:COLORS.light,
+    fontSize:SIZES.base * 1.5,
+    fontWeight:'bold',
+
+    textAlign:'center'
+  }
 
 });
 
